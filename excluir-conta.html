@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Como excluir sua conta e seus dados do aplicativo MYTV.">
+  <title>Excluir conta | MYTV</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080808;
+      --ink: #f2f0e9;
+      --soft: #aaa9a1;
+      --muted: #999991;
+      --gold: #fdd835;
+      --line: rgba(242, 240, 233, 0.12);
+      --card-ink: #181818;
+      --card-soft: #5c5c57;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: var(--bg); }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: var(--ink);
+      font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: var(--bg);
+      background-image: radial-gradient(rgba(242, 240, 233, 0.16) 0.7px, transparent 0.8px);
+      background-size: 8px 8px;
+    }
+
+    .shell {
+      width: min(100% - 64px, 1180px);
+      margin-inline: auto;
+    }
+
+    main.shell {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar { padding-top: 26px; }
+
+    .wordmark {
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-decoration: none;
+    }
+
+    .wordmark span {
+      color: var(--gold);
+      font-weight: 300;
+    }
+
+    .hero { padding-top: clamp(28px, 4vw, 48px); }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7.6vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+    }
+
+    h1 .light {
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: -0.065em;
+    }
+
+    .updated {
+      margin: 22px 0 0;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .panel {
+      flex: 1;
+      margin-top: clamp(32px, 5vw, 56px);
+      padding: clamp(28px, 5vw, 64px);
+      background: #000;
+      border-radius: 28px 28px 0 0;
+    }
+
+    .text { max-width: 720px; }
+
+    h2 {
+      margin: 40px 0 12px;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--soft);
+    }
+
+    .text > p:first-child { margin-bottom: 0; }
+
+    strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    a {
+      color: var(--gold);
+      text-underline-offset: 3px;
+    }
+
+    a:hover { color: #fff; }
+
+    a:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* Passos em cartão branco, como no index */
+    .steps {
+      margin: 0 0 20px;
+      padding: 26px 30px 26px 52px;
+      background: #fff;
+      border-radius: 18px;
+      color: var(--card-ink);
+    }
+
+    .steps li {
+      padding-left: 6px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .steps li + li { margin-top: 12px; }
+
+    .steps li::marker {
+      color: #8a6d00;
+      font-weight: 600;
+    }
+
+    .steps strong { color: var(--card-ink); }
+
+    .steps a {
+      color: #7a5f00;
+      word-break: break-word;
+    }
+
+    .steps a:hover { color: #000; }
+
+    code {
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: #efeee9;
+      color: var(--card-ink);
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      word-break: break-all;
+    }
+
+    .more {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    footer { background: #000; }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-block: 26px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .footer-inner b {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--ink); }
+
+    @media (max-width: 760px) {
+      .shell { width: calc(100% - 36px); }
+      .panel { border-radius: 22px 22px 0 0; }
+      h2 { font-size: 20px; margin-top: 34px; }
+      p, .steps li { font-size: 16px; }
+      .steps { padding: 22px 20px 22px 40px; border-radius: 16px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="shell">
+    <nav class="topbar" aria-label="Navegação principal">
+      <a class="wordmark" href="./">MY<span>TV</span></a>
+    </nav>
+
+    <header class="hero">
+      <h1>Como excluir sua <span class="light">conta do MYTV</span></h1>
+      <p class="updated">Última atualização: 27 de outubro de 2026</p>
+    </header>
+
+    <article class="panel">
+      <div class="text">
+        <p>No MYTV, sua conta e sua biblioteca ficam no seu próprio projeto do Firebase. Veja abaixo como apagar tudo.</p>
+
+        <h2>Pelo aplicativo (recomendado)</h2>
+        <ol class="steps">
+          <li>Abra o MYTV e entre na sua conta.</li>
+          <li>Na tela de perfil, toque nos três pontinhos no topo para abrir <strong>Conta</strong>.</li>
+          <li>Role até o fim e toque em <strong>Excluir conta</strong>.</li>
+          <li>Confirme e digite sua senha.</li>
+        </ol>
+        <p><strong>O que é apagado:</strong> a sua conta de login e toda a sua biblioteca (séries, filmes, episódios assistidos, listas, nome, foto e banner do perfil). A exclusão é definitiva e não pode ser desfeita.</p>
+        <p><strong>O que continua:</strong> nada fica com a desenvolvedora, porque os dados não passam por ela. Desinstalar o aplicativo também remove o que ficou guardado no aparelho.</p>
+
+        <h2>Se você não consegue mais abrir o app</h2>
+        <p>Como os dados estão no seu projeto do Firebase, é possível apagá-los direto no Console do Firebase, com a conta Google dona do projeto:</p>
+        <ol class="steps">
+          <li>Acesse <a href="https://console.firebase.google.com">console.firebase.google.com</a> e abra o seu projeto do MYTV.</li>
+          <li>Em <strong>Authentication › Usuários</strong>, exclua o seu usuário.</li>
+          <li>Em <strong>Realtime Database</strong>, apague o item <code>users/SEU_ID</code> (o ID aparece em Conta, no app) ou apague o banco inteiro.</li>
+          <li>Se quiser remover tudo, exclua o projeto em <strong>Configurações do projeto</strong>.</li>
+        </ol>
+        <p>Precisa de ajuda com algum passo? Escreva para <a href="mailto:todosloude@gmail.com">todosloude@gmail.com</a> e eu te oriento. Importante: a desenvolvedora não tem acesso ao seu projeto do Firebase, então a exclusão em si é feita por você.</p>
+
+        <p class="more">Mais detalhes sobre os dados: <a href="privacidade.html">Política de Privacidade</a>.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <b>MYTV</b>
+      <a href="mailto:todosloude@gmail.com">todosloude@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>
